@@ -1,0 +1,33 @@
+$position: fixed;
+$display: block;
+$width: 100%;
+$z-index: 1;
+$top: 0;
+$content: "";
+$background1:#00d2ff;
+$background2:linear-gradient(to right, #3a7bd5, #00d2ff);
+
+
+body::before {
+  position: $position;
+  z-index: $z-index;
+  top: $top;
+  display: $display;
+  content: $content;
+  width: $width;
+  height: 10px;
+  background: $background1;
+  background: $background2
+}
+
+body::after {
+  position: $position;
+  z-index: $z-index;
+  bottom: $top;
+  display: $display;
+  content: $content;
+  width: $width;
+  height: 12px;
+  background: $background1;
+  background: $background2
+}

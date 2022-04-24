@@ -4,7 +4,10 @@ const config: GatsbyConfig = {
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [
+    `gatsby-theme-material-ui`,
+    `gatsby-plugin-sass`  
+  ],
 }
 
 export default config
