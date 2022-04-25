@@ -1,18 +1,20 @@
 import React from "react";
-import Profill from "../components/profill";
-import Grid from '@mui/material/Grid';
+import { CSSProperties } from 'react';
+import { Container } from 'reactstrap';
+
+import Profile from "../components/profile";
 import "../assets/css/body.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+const style: CSSProperties = {
+  maxWidth:"800px"
+}
 
 const IndexPage = () => {
   return (
-      <Grid container 
-            justifyContent="center"
-            style={{minWidth:'500px'}}
-            >
-        <Profill/>
-      </Grid>
+      <Container style={style}>
+        <Profile/>
+      </Container>
   );
 };
 
