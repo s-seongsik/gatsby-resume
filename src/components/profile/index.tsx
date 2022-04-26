@@ -21,7 +21,7 @@ const style: Record<TStyleKey, CSSProperties> = {
     fontSize: "1.5rem",
     lineHeight: 1.2,
     fontWeight: 500,
-  }
+  },
 }
 
 
@@ -39,12 +39,14 @@ const Profill = () => {
 
 const myName = () => {
   return (
-    <Col xs={12} className="text-md-left">
-      <h1 style={style.h1}>🧑‍💻 안녕하세요, 
-        <br></br>
-        저는 서성식입니다.
-      </h1>
-    </Col>
+    <Row>
+      <Col xs={12} className="text-md-left">
+        <h1 style={style.h1}>🧑‍💻 안녕하세요, 
+          <br></br>
+          저는 서성식입니다.
+        </h1>
+      </Col>
+    </Row>
   )
 }
 
@@ -63,9 +65,11 @@ const myIntroduce = () => {
   )
   
   return (
-    <Col xs={12} className="text-md-left mt-5">
-        {introList}
-    </Col>
+    <Row>
+      <Col xs={12} className="text-md-left mt-5">
+          {introList}
+      </Col>
+    </Row>
   )
 }
 
@@ -88,39 +92,21 @@ const myContact = () => {
 
   const contactList = contact.map((value, index)=>(
     <>
-      <Col key={index} xs={1} className="text-md-left mt-4">
-        <FontAwesomeIcon className="mr-2" icon={value.icon} />
-      </Col>
-      <Col key={index} xs="auto" className="text-md-left mt-4">
-      <a href='https://s-seongsik.github.io/resume/'>{value.text}</a>
-      </Col>
+      <Row>
+        <Col key={index} xs={1} className="text-md-right mt-4">
+          <FontAwesomeIcon className="mr-2" icon={value.icon} />
+        </Col>
+        <Col key={index} xs="auto" className="text-md-left mt-4">
+        <a href='https://s-seongsik.github.io/resume/'>{value.text}</a>
+        </Col>
+      </Row>
     </>
   ))
 
   return (
-    // <Row>
-    //   {contactList}
-    // </Row>
-    <ListGroup>
-  <ListGroupItem className="justify-content-between">
-    <Badge pill>
-      14 
-    </Badge>
-    {' '} Cras justo odio
-  </ListGroupItem>
-  <ListGroupItem className="justify-content-between">
-    Dapibus ac facilisis in{' '}
-    <Badge pill>
-      2
-    </Badge>
-  </ListGroupItem>
-  <ListGroupItem className="justify-content-between">
-    Morbi leo risus{' '}
-    <Badge pill>
-      1
-    </Badge>
-  </ListGroupItem>
-</ListGroup>
+    <>
+      {contactList}
+    </>
   )
 }
 
