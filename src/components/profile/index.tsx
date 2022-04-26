@@ -1,7 +1,9 @@
-import { margin } from '@mui/system';
 import * as React from 'react';
 import { CSSProperties } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 type TStyleKey =
   | 'h1'
@@ -29,6 +31,7 @@ const Profill = () => {
       <Row>
         {myName()}
         {myIntroduce()}
+        {myContact()}
       </Row>
     </div>
   )
@@ -54,8 +57,8 @@ const myIntroduce = () => {
     '마지막으로, 주도적으로 일할 수 있는 환경을 선호합니다.'
   ]
 
-  const introList = introduceData.map(intro => (
-    <p style={style.p}>{intro}</p>
+  const introList = introduceData.map((intro,index) => (
+    <p key={index} style={style.p}>{intro}</p>
     )
   )
   
@@ -66,5 +69,59 @@ const myIntroduce = () => {
   )
 }
 
+
+const myContact = () => {
+  const contact:Array<Object> = [
+    {
+      text : 'sungsik9831@gmail.com',
+      icon : faEnvelope
+    },
+    {
+      text : 'sungsik9831@gmail.com',
+      icon : faEnvelope
+    },
+    {
+      text : 'sungsik9831@gmail.com',
+      icon : faEnvelope
+    }
+  ];
+
+  const contactList = contact.map((value, index)=>(
+    <>
+      <Col key={index} xs={1} className="text-md-left mt-4">
+        <FontAwesomeIcon className="mr-2" icon={value.icon} />
+      </Col>
+      <Col key={index} xs="auto" className="text-md-left mt-4">
+      <a href='https://s-seongsik.github.io/resume/'>{value.text}</a>
+      </Col>
+    </>
+  ))
+
+  return (
+    // <Row>
+    //   {contactList}
+    // </Row>
+    <ListGroup>
+  <ListGroupItem className="justify-content-between">
+    <Badge pill>
+      14 
+    </Badge>
+    {' '} Cras justo odio
+  </ListGroupItem>
+  <ListGroupItem className="justify-content-between">
+    Dapibus ac facilisis in{' '}
+    <Badge pill>
+      2
+    </Badge>
+  </ListGroupItem>
+  <ListGroupItem className="justify-content-between">
+    Morbi leo risus{' '}
+    <Badge pill>
+      1
+    </Badge>
+  </ListGroupItem>
+</ListGroup>
+  )
+}
 
 export default Profill;
