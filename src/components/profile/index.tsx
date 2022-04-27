@@ -1,33 +1,26 @@
 import * as React from 'react';
 import { CSSProperties } from 'react';
 import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition, faEnvelope, faBook } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faBloggerB } from '@fortawesome/free-brands-svg-icons';
+import "../../assets/css/profile/profile.scss"
 
-type TStyleKey =
-  | 'h1'
-  | 'p'
+// type TStyleKey =
+//   | 'p'
 
-const style: Record<TStyleKey, CSSProperties> = {
-  h1 : {
-    lineHeight: "1.2",
-    fontSize: "4rem", 
-    fontWeight: "bold",
-    color:"rgb(60, 120, 216)"
-  },
-
-  p: {
-    fontSize: "1.5rem",
-    lineHeight: 1.2,
-    fontWeight: 500,
-  },
-}
+// const style: Record<TStyleKey, CSSProperties> = {
+//   p: {
+//     fontSize: "1.5rem",
+//     lineHeight: 1.2,
+//     fontWeight: 500,
+//   },
+// }
 
 
 const Profill = () => {
   return (
-    <div className="mt-5">
+    <div className="my-5">
       <Row>
         {myName()}
         {myIntroduce()}
@@ -41,7 +34,7 @@ const myName = () => {
   return (
     <Row>
       <Col xs={12} className="text-md-left">
-        <h1 style={style.h1}>🧑‍💻 안녕하세요, 
+        <h1 className='profile-h1'>🧑‍💻 안녕하세요, 
           <br></br>
           저는 서성식입니다.
         </h1>
@@ -60,7 +53,7 @@ const myIntroduce = () => {
   ]
 
   const introList = introduceData.map((intro,index) => (
-    <p key={index} style={style.p}>{intro}</p>
+    <p key={index} className="profile-paragraph">{intro}</p>
     )
   )
   
@@ -75,32 +68,44 @@ const myIntroduce = () => {
 
 
 const myContact = () => {
-  const contact:Array<Object> = [
+  interface TestInterface {
+    text : string,
+    link : string,
+    icon : IconDefinition
+  };
+
+  const contact:Array<TestInterface> = [
     {
       text : 'sungsik9831@gmail.com',
+      link : '',
       icon : faEnvelope
     },
     {
-      text : 'sungsik9831@gmail.com',
-      icon : faEnvelope
+      text : '깃허브',
+      link : 'https://github.com/s-seongsik',
+      icon : faGithub
     },
     {
-      text : 'sungsik9831@gmail.com',
-      icon : faEnvelope
+      text : '기술 블로그',
+      link : 'https://s-seongsik.github.io/',
+      icon : faBloggerB
+    },
+    {
+      text : '기술 핸드북',
+      link : 'https://s-seongsik.github.io/sik-book/',
+      icon : faBook
     }
   ];
 
   const contactList = contact.map((value, index)=>(
-    <>
-      <Row>
-        <Col key={index} xs={1} className="text-md-right mt-4">
-          <FontAwesomeIcon className="mr-2" icon={value.icon} />
-        </Col>
-        <Col key={index} xs="auto" className="text-md-left mt-4">
-        <a href='https://s-seongsik.github.io/resume/'>{value.text}</a>
-        </Col>
-      </Row>
-    </>
+    <Row key={index}>
+      <Col xs={1} className="text-md-right mt-4">
+        <FontAwesomeIcon className="mr-2" icon={value.icon} />
+      </Col>
+      <Col xs="auto" className="text-md-left mt-4">
+      <a href={value.link}>{value.text}</a>
+      </Col>
+    </Row>
   ))
 
   return (

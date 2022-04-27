@@ -3,7 +3,7 @@ import { CSSProperties } from 'react';
 import { Container } from 'reactstrap';
 
 import Profile from "../components/profile";
-import "../assets/css/body.scss";
+import "../assets/css/global.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const style: CSSProperties = {
