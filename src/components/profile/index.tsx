@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { CSSProperties } from 'react';
-import { Row, Col, ListGroup, ListGroupItem, Badge } from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconDefinition, faEnvelope, faBook } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faBloggerB } from '@fortawesome/free-brands-svg-icons';
