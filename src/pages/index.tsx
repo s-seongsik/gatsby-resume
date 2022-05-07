@@ -19,8 +19,11 @@ const IndexPage = () => {
   return (
       <Container style={style}>
         <Profile/>
+        <hr />
         <Experience/>
+        <hr />
         <OpenSource/>
+        <hr />
         <Skill/>
       </Container>
   );
