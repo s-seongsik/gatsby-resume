@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { Row, Col, Card, CardGroup, CardBody, CardTitle, CardSubtitle, CardText, List} from 'reactstrap';
+import { Row, Col, Card, CardGroup, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 import { InterFaceExperience } from './InterFaceExperience'
 import PayloadData from '../../payload/experience';
-import "../../assets/css/experience/experience.scss"
-import { exec } from 'child_process';
+import '../../assets/css/variable.css'
 
 type Payload = InterFaceExperience.Payload;
 
@@ -23,7 +22,7 @@ const Title = () => {
     return (
         <Row>
             <Col xs={12} className="text-md-left">
-                <h2 className='experience-h2'>
+                <h2 className='title'>
                     Experience
                 </h2>
             </Col>
@@ -31,13 +30,13 @@ const Title = () => {
     )
 }
 
-const Contents =(data:Payload['data']) => {
+const Contents =(data: Payload['data']) => {
     const dataList = data.map((exp, index) => (
         <Row key={index} className="mt-5">
             <Col sm={12} md={6}> 
                 <Card style={{ borderColor: "transparent" }}>
                     <CardBody>
-                    <CardTitle tag="h3" className="mb-3" style={{ fontWeight: "bold"}}>
+                    <CardTitle tag="h3" className="title mb-3">
                         {exp.title}
                     </CardTitle>
                     <CardSubtitle className="text-muted" tag="h6">
@@ -56,7 +55,7 @@ const Contents =(data:Payload['data']) => {
                             <Col md={12} className="mb-2">
                                 <Card style={{ borderColor: "transparent" }}>
                                     <CardBody>
-                                    <CardTitle tag="h3" className='mb-3' style={{ fontWeight: "bold"}}>
+                                    <CardTitle tag="h4" className='title mb-3'>
                                         {proj.title}
                                     </CardTitle>
                                     <CardSubtitle className="mb-3 text-muted" tag="h6">
@@ -67,8 +66,8 @@ const Contents =(data:Payload['data']) => {
 
                                 <Card style={{ borderColor: "transparent" }}>
                                     <CardBody>
-                                    <CardTitle tag="h4" className='mb-3'>
-                                        설명
+                                    <CardTitle tag="h5" className='title mb-3'>
+                                        프로젝트 설명
                                     </CardTitle>
                                     <CardText>
                                         {proj.description}
@@ -78,8 +77,8 @@ const Contents =(data:Payload['data']) => {
 
                                 <Card style={{ borderColor: "transparent" }}>
                                     <CardBody>
-                                    <CardTitle tag="h4" className='mb-3'>
-                                        역할
+                                    <CardTitle tag="h5" className='title mb-3'>
+                                        프로젝트 역할
                                     </CardTitle>
                                     {proj.role.map((role, index)=>(
                                         <ul key={index}>
@@ -93,8 +92,8 @@ const Contents =(data:Payload['data']) => {
 
                                 <Card style={{ borderColor: "transparent" }}>
                                     <CardBody>
-                                    <CardTitle tag="h4" className='mb-3'>
-                                        사용기술
+                                    <CardTitle tag="h5" className='title mb-3'>
+                                        프로젝트 사용기술
                                     </CardTitle>
                                     <CardText>
                                         {proj.tech}

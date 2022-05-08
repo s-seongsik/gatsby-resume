@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Row, Col, Card, CardBody, CardTitle} from 'reactstrap';
-import { InterFaceOpensource } from './InterFaceOpensource';
-import PayloadData from '../../payload/opensource';
+import { InterFaceCertificate } from './InterFaceCertificate';
+import PayloadData from '../../payload/certificate';
 
-type Payload = InterFaceOpensource.Payload;
+type Payload = InterFaceCertificate.Payload;
 
-const OpenSource = () => {
+const Skill = () => {
     const { data } = PayloadData;
     return (
       <div className="mt-5">
@@ -22,7 +22,7 @@ const Title = () => {
         <Row>
             <Col xs={12} className="text-md-left">
                 <h2 className='title'>
-                    OpenSource
+                    Certificate
                 </h2>
             </Col>
         </Row>
@@ -32,20 +32,14 @@ const Title = () => {
 const Contents =(data: Payload['data']) => {
     return (
         <Row className="mt-5">
-            {data.map((ope, index)=> (
+            {data.map((certificate, index)=> (
                 <Col key={index} sm={12} className="mb-4"> 
                     <Card style={{ borderColor: "transparent" }}>
                         <CardBody>
                         <CardTitle tag="h3" className='title mb-3'>
-                            {ope.title}
+                            {certificate.title} 
                         </CardTitle>
-                        {ope.contents.map((contents, index) => (
-                            <ul key={index}>
-                                <li>
-                                    {contents.link ? <a href={contents.link} target="_blank">{contents.text}</a> : contents.text}
-                                </li>
-                            </ul>
-                        ))}
+                        <h5 style={{color:"gray"}}>{certificate.date} </h5>
                         </CardBody>
                     </Card>
                 </Col>
@@ -55,4 +49,4 @@ const Contents =(data: Payload['data']) => {
     )
 }
 
-export default OpenSource;
+export default Skill;

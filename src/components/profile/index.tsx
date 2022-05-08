@@ -1,12 +1,9 @@
 import * as React from 'react';
-import { CSSProperties } from 'react';
 import { Row, Col} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition, faEnvelope, faBook } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faBloggerB } from '@fortawesome/free-brands-svg-icons';
 import { InterFaceProfile } from './InterFaceProfile'
 import PayloadData from '../../payload/profile';
-import "../../assets/css/profile/profile.scss"
+import '../../assets/css/variable.css'
 
 type Payload = InterFaceProfile.Payload;
 
@@ -25,7 +22,7 @@ const Profile = () => {
 
 const myName = (name: Payload['name']) => {
   const nameList = name.map((name, index)=>(
-    <h1 key={index} className='profile-h1'> {name} </h1>
+    <h1 className='title' key={index}> {name} </h1>
   ))
   
   return (
