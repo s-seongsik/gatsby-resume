@@ -21,11 +21,8 @@ const opensource: InterFaceOpensource.Payload = {
             ],
         },
         {
-            title : 'nuxtjs-resume',
+            title : '웹 이력서',
             contents : [
-                {
-                    text: 'Nuxt.js와 vuetify로 만든 정적 웹 이력서 프로젝트입니다.',
-                },
                 {
                     text: '언제든 커스텀이 가능한 웹 이력서가 필요했기 때문에 직접 만들게 되었습니다.',
                 },
@@ -33,13 +30,16 @@ const opensource: InterFaceOpensource.Payload = {
                     text: '모바일, 테블릿, 노트북, PC 등 다양한 디바이스에서도 접근할 수 있도록 모던 웹(반응형)에 신경썼습니다.',
                 },
                 {
-                    text: '누구나 쉽게 사용할 수 있도록 간단하게 구현하고자 노력했습니다.',
+                    text: 'React와 Vue 2가지 버전으로 만들었습니다.',
                 },
                 {
-                    text: 'To Github 저장소',
+                    text: 'React 버전 : Gatsby와 TypeScript로 만든 정적 웹 이력서 버전입니다.',
+                    link: 'https://github.com/s-seongsik/gatsby-resume'
+                },
+                {
+                    text: 'Vue 버전 : nuxt.js로 만든 정적 웹 이력서 버전입니다.',
                     link: 'https://github.com/s-seongsik/nuxtjs-resume'
                 }
-                
             ],
         },
         {
