@@ -1,54 +1,84 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+# Gatsby-resume 버전
 
-## 🚀 Quick start
+## 빌드 및 셋업
 
-1.  **Create a Gatsby site.**
+```bash
+# install dependencies
+$ npm install
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+# package.json > script > dev에서 port 변경하면 됨. (default: 3000)
+$ npm run dev
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+# 프로덕트 App 배포
+$ npm run build
 
-2.  **Start developing.**
+# build된 App으로 서버 실행
+$ npm run serve
 
-    Navigate into your new site’s directory and start it up.
+# 연결된 리모트 저장소에 gh-pages 브랜치로 build app 배포
+$ npm run deploy
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+<br>
 
-3.  **Open the code and start customizing!**
+## Git Repository Name 셋팅
 
-    Your site is now running at http://localhost:8000!
+* ./gatsby-config.ts
+* pathPrefix에 `Repository Name` 입력
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+```ts
+const config: GatsbyConfig = {
+  pathPrefix: `/g-resume`,
+  siteMetadata: {
+    siteUrl: `https://www.yourdomain.tld`,
+  },
+  plugins: [
+    `gatsby-theme-material-ui`,
+    `gatsby-plugin-sass`  
+  ],
+}
 
-4.  **Learn more**
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+<br>
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+## 프로젝트 구조 설명
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+* payload에서 각 컴포넌트별로 데이터만 수정하면 된다.
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+```
+.
+src
+├── assets                 
+│   ├── global.scss // 글로벌 css
+│   └── variables.css // 컴포넌트에 사용되는 모든 css가 들어있음.
+├── components                 
+│   ├── certifiacate // 자격증 컴포넌트
+│   │   ├── index.tsx   
+│   │   └── interFaceCertificate.ts
+│   ├── common  // 공통 컴포넌트 인터페이스
+│   │   └── interFaceCommon.ts
+│   ├── education // 교육 컴포넌트
+│   │   ├── index.tsx   
+│   │   └── interFaceEducation.ts
+│   ├── experience // 경험 컴포넌트
+│   │   ├── index.tsx   
+│   │   └── interFaceExperience.ts
+│   ├── opensource // 오픈소스 컴포넌트
+│   │   ├── index.tsx   
+│   │   └── interFaceOpensource.ts
+│   ├── profile // 프로필 컴포넌트
+│   │   ├── index.tsx   
+│   │   └── interFaceProfile.ts
+│   └── skill // 스킬 컴포넌트
+│       ├── index.tsx   
+│       └── interFaceSkill.ts
+...
+└── payload
+    ├── certifiacate.ts // 자격증 payload 
+    ├── education.ts // 교육 payload      
+    ├── experience.ts // 경험 payload  
+    ├── opensource.ts // 오픈소스 payload       
+    ├── profile.ts // 프로필 payload 
+    └── skill.ts // 스킬 payload 
+```
