@@ -39,7 +39,7 @@ const Contents =(data: Payload['data']) => {
                         <CardTitle tag="h3" className='title mb-3'>
                             {education.title} 
                         </CardTitle>
-                        <h5 style={{color:"gray"}}>{education.subtitle} </h5>
+                            <h5 style={{color:"gray"}}>{education.subtitle} </h5>
                         </CardBody>
                     </Card>
                 </Col>
