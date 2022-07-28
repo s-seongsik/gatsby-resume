@@ -20,6 +20,17 @@ const skill: InterFaceSkill.Payload = {
             ],
         },
         {
+            title: "Coworking",
+            contents : [
+                {
+                    text: 'Git-Flow 방식과 Jira tickets으로 일하는 것을 선호합니다.',
+                },
+                {
+                    text: '업무 요청은 구두와 이메일보다, 협업 툴(jandi 등)을 선호합니다.',
+                },
+            ],
+        },
+        {
             title: "Communication",
             contents : [
                 {
@@ -61,6 +72,9 @@ const skill: InterFaceSkill.Payload = {
                 },
                 {
                     text: 'Json Web Token으로 사용자 인증 모듈을 개발한 경험이 있습니다. 이에따라 웹 저장소(쿠키, 세션스토리지, 로컬스토리지)에 대한 이해와 사용이 익숙합니다.',
+                },
+                {
+                    text: 'Swagger를 사용하여 REST 웹 서비스를 문서화하여 개발하였습니다. 이를 통해 클라이언트 측의 개발 생상성 향상을 지원할 수 있습니다.',
                 },
             ],
         },

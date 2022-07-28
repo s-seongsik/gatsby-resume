@@ -3,8 +3,29 @@ import {InterFaceExperience} from '../components/experience/InterFaceExperience'
 const experience: InterFaceExperience.Payload= {
     data: [
         {
+            title : '쿡앱스',
+            position : 'Web Developer',
+            startDate : '2022. 06',
+            endDate : '현재',
+            project: [
+                {
+                    title:"BI 플랫폼 고도화 개발",
+                    startDate: "2022.06",
+                    endDate: "현재",
+                    description: "쿡앱스 게임 및 고객 데이터를 수집 및 분석하여 전사적으로 활용할 수 있도록 BI 모니터링 플랫폼 개발을 진행",
+                    role: [
+                        "프론트엔드는 Vue3와 Typescirpt로 개발했으며, 패키지는 yarn으로 관리. 대시보드는 Echart.js를 활용하여 개발을 진행",
+                        "백엔드는 Flask기반 데이터를 처리 및 가공하는 REST-API 서버로 대시보드 개발에 필요한 REST-API 개발",
+                        "Git-flow, Github, Github Action으로 소스관리 및 Workflow 진행",
+                        "Jira, Confluence, jandi로 팀내 협업"
+                    ],
+                    tech: "Vue3, Typescript, Yarn, Element plus, Tailwind CSS, HTML5, CSS, Flask, Docker"
+                },
+            ],
+        },
+        {
             title : '위즈코어',
-            position : 'Frontend Developer',
+            position : 'Web Developer',
             startDate : '2019. 12',
             endDate : '현재',
             project: [
